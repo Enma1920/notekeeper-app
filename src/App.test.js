@@ -1,6 +1,6 @@
 import { describe, expect, test } from "vitest";
 describe("App", () => {
-  test("renders", async () => {
+  test("empty test",  () => {
     expect(true).toBe(true);
   });
 });
