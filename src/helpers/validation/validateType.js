@@ -1,5 +1,5 @@
 /**
- * If ecah note property is of the expected type, return true, otherwise return false
+ * If each note property is of the expected type, return true, otherwise return false
  * @param {object} note 
  * @returns boolean
  */
