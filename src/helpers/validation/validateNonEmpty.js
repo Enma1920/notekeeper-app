@@ -1,6 +1,11 @@
-/*
-validateNonEmpty.js: This validator ensures that string properties 
-(such as "name" and "description") are not empty. It can check whether 
-string properties have non-empty content and return true if they do, 
-or false otherwise.
-*/
+/**
+ * Returns true if string properties have non-empty content, otherwise returns false
+ * @param {object} note
+ * @returns boolean
+ */
+export const validateNonEmpty = ({note}) =>{
+    if(note.id !== "" || note.name !== "" || note.description !== "" || note.status !== "" || note.due_date !== ""){
+        return true;
+    }
+    return false;
+}

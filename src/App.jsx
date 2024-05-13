@@ -1,10 +1,11 @@
+import { NotesList } from "./components/NotesList";
 
 function App() {
-  const baseUrl = import.meta.env.VITE_ENV;
+  import.meta.env.VITE_ENV;
 
   return (
     <>
-      <h1>`${baseUrl}`</h1>
+      <NotesList />
       
     </>
   )

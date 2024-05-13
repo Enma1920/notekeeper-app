@@ -1,6 +1,14 @@
-/*
-validateEnum.js: This validator ensures that properties with enum values 
-(such as "status") contain values only from the predefined set of options. 
-It can check whether the value of a property matches one of the allowed enum 
-values and return true if it does, or false otherwise.
-*/
+/**Returns true if the note status corresponds to one of the allowed values, otherwise returns false
+ * 
+ * @param {object} notes
+ * @returns boolean
+ */
+export const validateEnum = ({note}) =>{
+    const allowedStatus = ["pending" , "in progress", "done"];
+    for (let status of allowedStatus) {
+        if(note.status === status){
+            return true;
+        }
+    }
+    return false;
+}

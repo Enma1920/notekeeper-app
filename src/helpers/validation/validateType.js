@@ -1,6 +1,12 @@
-/*
-validateType.js: This validator ensures that each property of the note object 
-has the correct data type. It can check whether each property is of the expected 
-type (e.g., string, boolean) and return true if all properties match their expected 
-types, or false otherwise.
-*/
+/**
+ * If ecah note property is of the expected type, return true, otherwise return false
+ * @param {object} note 
+ * @returns boolean
+ */
+
+export const validateType = ({note}) =>{
+    if(typeof(note.id) !== "string" || typeof(note.name)!== "string" || typeof(note.description) !== "string" || typeof(note.status) !== "string" || typeof(note.important) !== "boolean" || typeof(note.due_date)!== "string" || typeof(note.created_at) !== "number"){
+        return false;
+    }
+    return true;
+}
