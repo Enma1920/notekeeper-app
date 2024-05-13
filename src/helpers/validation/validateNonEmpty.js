@@ -3,7 +3,7 @@
  * @param {object} note
  * @returns boolean
  */
-export const validateNonEmpty = ({note}) =>{
+export const validateNonEmpty = (note) =>{
     if(note.id !== "" || note.name !== "" || note.description !== "" || note.status !== "" || note.due_date !== ""){
         return true;
     }

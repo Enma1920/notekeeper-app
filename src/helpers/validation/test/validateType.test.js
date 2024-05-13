@@ -1,4 +1,5 @@
 import { describe, expect, test } from "vitest";
+import { validateNonEmpty } from "../validateNonEmpty";
 const exemple1 = {
     "notes": [
       {
@@ -13,10 +14,11 @@ const exemple1 = {
     ]
   };
 
-describe("validateEnum", () => {
-    test("When ", () => {
-        
-        expect(true).toBe(true);
+describe("Given validateEnum function", () => {
+    test("When notes properties corresponds to the correct type. Then it returns true, otherwise false ", () => {
+        exemple1.notes.map((notes)=>{
+            expect(validateNonEmpty({note: notes})).toEqual(true)            
+        })
     });
 
 });

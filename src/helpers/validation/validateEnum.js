@@ -3,12 +3,10 @@
  * @param {object} notes
  * @returns boolean
  */
-export const validateEnum = ({note}) =>{
+export const validateEnum = (note) =>{
     const allowedStatus = ["pending" , "in progress", "done"];
-    for (let status of allowedStatus) {
-        if(note.status === status){
-            return true;
-        }
+    if(allowedStatus.includes(note.status)){
+        return true;
     }
     return false;
 }
