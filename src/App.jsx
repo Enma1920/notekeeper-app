@@ -1,13 +1,20 @@
-import { NotesList } from "./components/NotesList";
+import { NotesList, UpdateNoteForm, CreateNoteForm } from "./components";
+import { useNotes } from "./hooks/useNotes";
 
-function App() {
-  import.meta.env.VITE_ENV;
+function App()  {
 
+  const {notes} = useNotes();
   return (
     <>
-      <NotesList />
-      
+        <main className="main-content">
+        <NotesList notes={notes} />
+        <UpdateNoteForm />
+        <CreateNoteForm />
+        </main>
+
     </>
+
+
   )
 }
 
