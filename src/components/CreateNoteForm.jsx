@@ -1,10 +1,9 @@
 // import { useState} from "react";
-import {useNotes} from "../hooks/useNotes";
-import {useForm} from "../hooks/useForm";
+import useNotes from "../hooks/useNotes";
+import useForm from "../hooks/useForm";
 
 export const CreateNoteForm = () =>{
-    const {createNote} = useNotes();
-    const {notes, setNotes}= useNotes();
+    const {createNote, notes, handleUpdateNote} = useNotes();
 
     const{
         newName,
@@ -36,7 +35,7 @@ export const CreateNoteForm = () =>{
             status: newStatus,
             due_date: newDueDate,
         }
-        setNotes([...notes, createNote(newNote)]);
+        handleUpdateNote([...notes, createNote(newNote)]);
         setNewName("");
         setNewDescription("");
         setNewImportant(false);

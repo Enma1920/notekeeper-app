@@ -1,9 +1,9 @@
-import { useNotes } from "../hooks/useNotes";
+import useNotes  from "../hooks/useNotes";
+import {notesServices} from "../services/notes/notesServices";
 
 
 export const DeleteButton = ({noteId, noteName}) =>{
-    const {handleDeleteNote} = useNotes();
-    
+    const {handleUpdateNote} = useNotes();    
     const styles = {
         btnDelete : {
             backgroundColor: '#ff8787',
@@ -16,13 +16,21 @@ export const DeleteButton = ({noteId, noteName}) =>{
             margin: '10px'
         }
     }
-    const handleDelete= () =>{
-        handleDeleteNote(noteId, noteName);
+    const handleDeleteNote = (noteId, noteName) => {
+        const response = window.confirm(`Are you sure you want to delete this note? ${noteName}`);
+
+        if (response) {
+            notesServices.deleteNote(noteId)
+            .then(() => {notesServices.readNote()})
+            .then((data) => {handleUpdateNote(data.notes)})
+            .catch((error) => {console.error(error)});
+            
+        }
     }
-        
+
 
         return (
-            <button onClick={handleDelete} style={styles.btnDelete} className="section-article__delete">Delete</button>
+            <button onClick={()=>handleDeleteNote(noteId, noteName)} style={styles.btnDelete} className="section-article__delete">Delete</button>
         )
     
     

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export const useForm = () => {
+const useForm = () => {
     // const {notes, setNotes} = useState([]);
     const [newName, setNewName] = useState("");
     const [newDescription, setNewDescription] = useState("");
@@ -43,3 +43,4 @@ export const useForm = () => {
         handleChangeNewDueDate,
     }
 }
+export default useForm;

@@ -13,7 +13,7 @@ export const Note = ({ note }) => {
             }</p>
             <p className="section_article__duedate">Due date: {note.due_date}</p>
             <p>Created at: {new Date(note.created_at).toLocaleString()}</p>
-            <UpdateButton />
+            <UpdateButton noteId={note.id}  noteName={note.name} noteDescription={note.description} noteImportant={note.important} noteStatus={note.status} noteDueDate={note.dueDate} />
             <DeleteButton noteId={note.id} noteName= {note.name} />
             <br />  
             </article> 

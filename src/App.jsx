@@ -1,5 +1,5 @@
-import { NotesList, UpdateNoteForm, CreateNoteForm } from "./components";
-import { useNotes } from "./hooks/useNotes";
+import { NotesList, CreateNoteForm } from "./components";
+import useNotes from "./hooks/useNotes";
 
 function App()  {
 
@@ -8,7 +8,6 @@ function App()  {
     <>
         <main className="main-content">
         <NotesList notes={notes} />
-        <UpdateNoteForm />
         <CreateNoteForm />
         </main>
 

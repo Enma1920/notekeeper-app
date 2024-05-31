@@ -43,7 +43,7 @@ export const deleteNote = ((noteIdToDelete) =>{
         method: "DELETE",
     })
     .then((response) => {
-        return response.json()
+        return response.json();
     })
     return request;
 })
