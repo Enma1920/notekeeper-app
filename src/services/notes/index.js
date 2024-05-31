@@ -1,1 +1,1 @@
-export {notesServices} from './notesServices.js';
+export { notesServices } from "./notesServices.js";
